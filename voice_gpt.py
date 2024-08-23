@@ -67,7 +67,7 @@ async def pre_request_text(update: Update, context: ContextTypes.DEFAULT_TYPE) -
 def generate_gpt_answer(user_message, language) -> str:
     answer = "Seems something went wrong... try again later!"
     completion = openai.ChatCompletion.create(
-        model=os.getenv("TG_BOT_TOKEN"),
+        model=GPT_MODEL,
         messages=[
             {'role': 'user', 'content': f"Chat, please answer this question {user_message} in {language}"
                                         f"and don't ask me if I need help in anything else."}
